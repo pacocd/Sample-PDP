@@ -36,6 +36,7 @@ class NewProductViewController: UIViewController {
 
     func shareClickEvent(_ message: String) {
         CLSLogv("Clicked on: %@", getVaList([message]))
+        Answers.logCustomEvent(withName: "Clicked on: \(message)", customAttributes: nil)
     }
 
     @IBAction func takePicture(_ sender: Any) {

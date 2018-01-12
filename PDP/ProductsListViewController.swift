@@ -48,6 +48,7 @@ class ProductsListViewController: UIViewController {
 
     func shareActionClick(_ message: String) {
         CLSLogv("Clicked on: %@", getVaList([message]))
+        Answers.logCustomEvent(withName: "Clicked on: \(message)", customAttributes: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
