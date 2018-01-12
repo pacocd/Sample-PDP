@@ -216,6 +216,7 @@
 				AC3869161FE78E2D00002635 /* Resources */,
 				7CFD58D812C1C6334C391819 /* [CP] Embed Pods Frameworks */,
 				074CAD309C824651AA55428D /* [CP] Copy Pods Resources */,
+				AC8AAF2E200869D500AC47A1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,7 +281,7 @@
 				TargetAttributes = {
 					AC3869171FE78E2D00002635 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					AC38692B1FE78E2D00002635 = {
 						CreatedOnToolsVersion = 9.2;
@@ -460,6 +461,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AC8AAF2E200869D500AC47A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" bf7dc429b588d4ee8a759bac142ab863a5835c89 d6d9108de09596635dda5591fc17375ef58c413740107641cdefa9b6ecee4836";
 		};
 		B5F4AB2AABB9B90D7E5F13E1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -660,13 +674,15 @@
 			baseConfigurationReference = 8A4365C9510B319829919F0B /* Pods-PDP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DK89EV2E37;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VW7TQ7A4EY;
 				INFOPLIST_FILE = PDP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pacocd.PDP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fjcd.Pdp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8136ddfa-e621-462c-a4d3-75652718a3dc";
+				PROVISIONING_PROFILE_SPECIFIER = FJCD_Pdp_001;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -677,13 +693,15 @@
 			baseConfigurationReference = 266FA9DA67668389ACF175F6 /* Pods-PDP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DK89EV2E37;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VW7TQ7A4EY;
 				INFOPLIST_FILE = PDP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pacocd.PDP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fjcd.Pdp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8136ddfa-e621-462c-a4d3-75652718a3dc";
+				PROVISIONING_PROFILE_SPECIFIER = FJCD_Pdp_001;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

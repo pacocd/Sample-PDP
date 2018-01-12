@@ -6,6 +6,8 @@ target 'PDP' do
   use_frameworks!
   # Pods for PDP
   pod 'RealmSwift'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'PDPTests' do
     inherit! :search_paths
