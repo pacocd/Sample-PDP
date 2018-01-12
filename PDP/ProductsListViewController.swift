@@ -30,7 +30,7 @@ class ProductsListViewController: UIViewController {
             ]), for: .highlighted)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
-        button.backgroundColor = .black
+        button.backgroundColor = UIColor(red: 40 / 255, green: 147 / 255, blue: 250 / 255, alpha: 1)
         button.layer.cornerRadius = button.layer.bounds.height / 2
         button.addTarget(self, action: #selector(showAddProductPage(_:)), for: .touchUpInside)
         return button
