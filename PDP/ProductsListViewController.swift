@@ -15,6 +15,7 @@ class ProductsListViewController: UIViewController {
     @IBOutlet weak var toSaleLabel: UILabel!
     var products: [Product] = []
     let realm = try! Realm()
+    var dummyVar: Int? = nil
 
     lazy var addProductButton: UIButton = {
         let button: UIButton = UIButton(frame: CGRect(x: self.view.bounds.width - 70, y: self.view.bounds.height - 70, width: 50, height: 50))
