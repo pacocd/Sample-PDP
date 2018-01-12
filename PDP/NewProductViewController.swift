@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Crashlytics
 
 class NewProductViewController: UIViewController {
 
@@ -33,6 +34,10 @@ class NewProductViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func shareClickEvent(_ message: String) {
+        CLSLogv("Clicked on: %@", getVaList([message]))
+    }
+
     @IBAction func takePicture(_ sender: Any) {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -41,6 +46,7 @@ class NewProductViewController: UIViewController {
     }
 
     @objc func cancel(_ sender: UIBarButtonItem) {
+        shareClickEvent(sender.title ?? "cancel")
         dismiss(animated: true, completion: nil)
     }
     @IBAction func save(_ sender: Any) {
@@ -54,6 +60,7 @@ class NewProductViewController: UIViewController {
         try! realm.write {
             realm.add(product)
         }
+        shareClickEvent("Save new object")
         dismiss(animated: true, completion: nil)
     }
 

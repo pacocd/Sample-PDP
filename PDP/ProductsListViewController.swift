@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Crashlytics
 
 class ProductsListViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class ProductsListViewController: UIViewController {
     @IBOutlet weak var toSaleLabel: UILabel!
     var products: [Product] = []
     let realm = try! Realm()
+    var dummyVar: Int? = nil
 
     lazy var addProductButton: UIButton = {
         let button: UIButton = UIButton(frame: CGRect(x: self.view.bounds.width - 70, y: self.view.bounds.height - 70, width: 50, height: 50))
@@ -44,6 +46,9 @@ class ProductsListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func shareActionClick(_ message: String) {
+        CLSLogv("Clicked on: %@", getVaList([message]))
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
@@ -93,6 +98,7 @@ extension ProductsListViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Products", bundle: nil)
         let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "NewProductViewController")
         let navigation: UINavigationController = UINavigationController(rootViewController: vc)
+        shareActionClick("open Add new product view")
         present(navigation, animated: true, completion: nil)
     }
 
